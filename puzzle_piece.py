@@ -1,7 +1,7 @@
 import pygame as pg
 import prepare
 
-def close_enough(value, target, tolerance=4):
+def close_enough(value, target, tolerance=7):
     return target - tolerance <= value <= target + tolerance
 
 class PuzzlePiece(object):

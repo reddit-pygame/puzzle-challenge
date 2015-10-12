@@ -1,10 +1,12 @@
 import pygame as pg
+import prepare
 from state_engine import GameState
 
 
 class DraggingSection(GameState):
     def __init__(self):
         super(DraggingSection, self).__init__()
+        self.connect_sound = prepare.SFX["connect"]
         
     def startup(self, persistent):
         self.persist = persistent
@@ -24,6 +26,7 @@ class DraggingSection(GameState):
             for section in [x for x in self.sections if x is not self.grabbed]:
                 if self.grabbed.can_add_section(section):
                     self.grabbed.add_section(section)
+                    self.connect_sound.play()
                     self.sections.remove(section)
                     self.grabbed.release()
                     self.leave_state("IDLE")

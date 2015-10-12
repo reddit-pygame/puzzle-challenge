@@ -1,5 +1,7 @@
 import sys
+from itertools import cycle
 import pygame as pg
+import prepare
 
     
 class Game(object):
@@ -27,6 +29,10 @@ class Game(object):
         self.state_name = start_state
         self.state = self.states[self.state_name]
         
+        self.songs = cycle(prepare.MUSIC.values())
+        pg.mixer.music.load(next(self.songs))
+        pg.mixer.music.play()
+        
     def event_loop(self):
         """Events are passed for handling to the current state."""
         for event in pg.event.get():
@@ -42,12 +48,19 @@ class Game(object):
         self.state = self.states[self.state_name]
         self.state.startup(persistent)
     
+    def next_song(self):
+        song = next(self.songs)
+        pg.mixer.music.load(song)
+        pg.mixer.music.play()
+        
     def update(self, dt):
         """
         Check for state flip and update active state.
         
         dt: milliseconds since last frame
         """
+        if not pg.mixer.music.get_busy():
+            self.next_song()
         if self.state.quit:
             self.done = True
         elif self.state.done:

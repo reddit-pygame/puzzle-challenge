@@ -20,7 +20,7 @@ class Menu(GameState):
         continents = sorted(prepare.CONTINENTS)
         w, h = 250, 80
         left = self.screen_rect.centerx - (w // 2)
-        top = 50
+        top = 10
         vert_space = 100 
         for continent in continents:
             Button((left, top, w, h), self.buttons, text=continent, 

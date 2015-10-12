@@ -8,3 +8,22 @@ File name: puzzle.png
 Source: Jigsaw Puzzle.svg https://commons.wikimedia.org/wiki/File:Jigsaw_Puzzle.svg
 Author: Psyon  https://commons.wikimedia.org/wiki/User:Psyon
 License: CC-BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+Sounds:
+
+File name: connect.wav
+Source: http://opengameart.org/content/menu-selection-click
+Author: http://opengameart.org/users/nenadsimic
+License: CC-BY 3.0 http://creativecommons.org/licenses/by/3.0/
+
+Music:
+
+File name: sombrero.ogg
+Source: http://opengameart.org/content/puzzle-music-desert-meets-shore-theme
+Author: Axton Crolley (http://opengameart.org/users/axtoncrolley)
+License: CC-BY-SA 3.0  https://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+File name: tropical.ogg
+Source: http://opengameart.org/content/surfside
+Author: Axton Crolley (http://opengameart.org/users/axtoncrolley)
+License: CC-BY-SA 3.0  https://creativecommons.org/licenses/by-sa/3.0/legalcode
