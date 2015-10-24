@@ -28,14 +28,23 @@ class Game(object):
         self.states = states
         self.state_name = start_state
         self.state = self.states[self.state_name]
+        self.fullscreen = False
         
-        self.songs = cycle(prepare.MUSIC.values())
-        pg.mixer.music.load(next(self.songs))
-        pg.mixer.music.play()
-        
+    def toggle_fullscreen(self):
+        self.fullscreen = not self.fullscreen
+        if self.fullscreen:
+            self.screen = pg.display.set_mode(prepare.SCREEN_SIZE, pg.FULLSCREEN)
+        else:            
+            self.screen = pg.display.set_mode(prepare.SCREEN_SIZE)        
+    
     def event_loop(self):
         """Events are passed for handling to the current state."""
         for event in pg.event.get():
+            if event.type == pg.KEYUP:
+                if event.key == pg.K_ESCAPE:
+                    self.done = True
+                elif event.key == pg.K_f:
+                    self.toggle_fullscreen()
             self.state.get_event(event)
             
     def flip_state(self):
@@ -47,11 +56,6 @@ class Game(object):
         persistent = self.state.persist
         self.state = self.states[self.state_name]
         self.state.startup(persistent)
-    
-    def next_song(self):
-        song = next(self.songs)
-        pg.mixer.music.load(song)
-        pg.mixer.music.play()
         
     def update(self, dt):
         """
@@ -59,8 +63,6 @@ class Game(object):
         
         dt: milliseconds since last frame
         """
-        if not pg.mixer.music.get_busy():
-            self.next_song()
         if self.state.quit:
             self.done = True
         elif self.state.done:

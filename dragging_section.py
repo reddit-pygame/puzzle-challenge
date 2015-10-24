@@ -6,8 +6,7 @@ from state_engine import GameState
 class DraggingSection(GameState):
     def __init__(self):
         super(DraggingSection, self).__init__()
-        self.connect_sound = prepare.SFX["connect"]
-        
+
     def startup(self, persistent):
         self.persist = persistent
         self.puzzle = self.persist["puzzle"]
@@ -26,8 +25,13 @@ class DraggingSection(GameState):
             for section in [x for x in self.sections if x is not self.grabbed]:
                 if self.grabbed.can_add_section(section):
                     self.grabbed.add_section(section)
-                    self.connect_sound.play()
                     self.sections.remove(section)
+                    self.grabbed.release()
+                    self.leave_state("IDLE")
+                    return
+            for piece in self.pieces:
+                if self.grabbed.can_add(piece):
+                    self.grabbed.add_piece(piece, self.puzzle.pieces)
                     self.grabbed.release()
                     self.leave_state("IDLE")
                     return
