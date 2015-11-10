@@ -5,7 +5,7 @@ creates a jigsaw puzzle from the image and allows the user to connect pieces to 
 
 Github repo: https://github.com/reddit-pygame/puzzle-challenge
 
-Reddit Challenge post: 
+Reddit Challenge post: https://www.reddit.com/r/pygame/comments/3s9m2j/challenge_a_puzzling_world/
 
 ##How It Works
 

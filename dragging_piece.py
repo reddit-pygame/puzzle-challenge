@@ -6,7 +6,6 @@ from state_engine import GameState
 class DraggingPiece(GameState):
     def __init__(self):
         super(DraggingPiece, self).__init__()
-        self.connect_sound = prepare.SFX["connect"]
         
     def startup(self, persistent):
         self.persist = persistent
@@ -25,7 +24,6 @@ class DraggingPiece(GameState):
         for piece in self.pieces:
             if self.grabbed.is_joinable(piece):
                 self.puzzle.join_pieces(self.grabbed, piece)
-                self.connect_sound.play()
                 return True
         return False
         
@@ -39,7 +37,6 @@ class DraggingPiece(GameState):
         for section in self.sections:
             if section.can_add(self.grabbed):
                 section.add_piece(self.grabbed, self.puzzle.pieces)
-                self.connect_sound.play()
                 return True
         return False
                     
