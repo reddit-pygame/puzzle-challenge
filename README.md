@@ -3,7 +3,7 @@
 This challenge focuses on using Pygame's mixer to add music and sound effects. The provided code allows the user to select a regional world map, 
 creates a jigsaw puzzle from the image and allows the user to connect pieces to assemble the puzzle.
 
-Github repo: 
+Github repo: https://github.com/reddit-pygame/puzzle-challenge
 
 Reddit Challenge post: 
 
@@ -23,7 +23,7 @@ The user can grab or place a piece or section of pieces by left-clicking the mou
 
 **ESC** Exit
 
-#Challenge
+###Challenge
 
 Add music: There are two songs in prepare.MUSIC, "sombrero" and "tropical". When one song finishes the next song should start playing.
 
