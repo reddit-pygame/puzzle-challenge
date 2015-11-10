@@ -1,7 +1,7 @@
-#A Real Puzzler
+#A Puzzling World
 
-This challenge focuses on using Pygame's [mixer]() to add music and sound effects. The provided code allows the user to select a regional world map, 
-creates a jigsaw puzzle from the image and allows the user to connect pieces to build the puzzle.
+This challenge focuses on using Pygame's mixer to add music and sound effects. The provided code allows the user to select a regional world map, 
+creates a jigsaw puzzle from the image and allows the user to connect pieces to assemble the puzzle.
 
 Github repo: 
 
@@ -18,7 +18,9 @@ The user can grab or place a piece or section of pieces by left-clicking the mou
 ##Controls
 
 **Left-click** Grab/place pieces
+
 **F** Toggle fullscreen
+
 **ESC** Exit
 
 #Challenge
@@ -32,7 +34,7 @@ Add sound: There is a Sound object (prepare.SFX["connect"]) which should be play
 
 [pygame.mixer.Sound](https://www.pygame.org/docs/ref/mixer.html#pygame.mixer.Sound)
 
-[pygame.mixer.music]https://www.pygame.org/docs/ref/music.html)
+[pygame.mixer.music](https://www.pygame.org/docs/ref/music.html)
 
 [itertools.cycle](https://docs.python.org/2/library/itertools.html#itertools.cycle)
 
@@ -44,7 +46,7 @@ Add sound: There is a Sound object (prepare.SFX["connect"]) which should be play
 
 **Get Off My Lawn** - Allow the user to turn music off
 
-**Sweet Sound of Success** - Find a sound effect to play when the user completes the puzzle.
-
 **A Poor Beautician** - Implement a timer that displays how long the user has been working on the puzzle. The timer should start when the user picks a map and stop when the puzzle is complete.
+
+**Sweet Sound of Success** - Find a sound effect to play when the user completes the puzzle.
 
